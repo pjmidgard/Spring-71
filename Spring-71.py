@@ -80,8 +80,16 @@ class compression:
                     
                    
                         
-                        
+              
                     
+                    
+                              
+                     
+                    if i==1:
+                        
+                        nameas=name+".bin"
+                    
+                    	
                     nac=len(nameas)
                     
                     Circle_times3=0
@@ -150,8 +158,8 @@ class compression:
                         while END_working<10:
                        
                             Circle_times3=Circle_times3+1
-
-                            with open(nameas, "ab") as f2:
+                            D=1
+                            if D==1:
                                 if Circle_times3==1:
 
                                  
@@ -504,6 +512,7 @@ class compression:
                                     T24=T7-T21
                                     T33=T24-T22
                                     
+                                    ccc=0
                                     cc=0
                                    
                                     
@@ -894,7 +903,10 @@ class compression:
                                     		szxzzza=""
                                     		szxzs=""
                                     		sda2=sda6
-                                    		f2.write(jl)
+                                    		
+                                    		with open(nameas, "wb") as f2:
+                                    			f2.write(jl)
+                                    	
                                     		x2 = time()
                                     		x3=x2-x
                                     		xs=float(x3)
@@ -1335,8 +1347,11 @@ class compression:
                                             szxzzza=""
                                             szxzs=""
                                             sda2=sda6
+                                            
+                                            with open(nameas, "wb") as f2:
+                                            
                                               
-                                            f2.write(jl)
+                                            	f2.write(jl)
                                             x2 = time()
                                             x3=x2-x
                                             xs=float(x3)
