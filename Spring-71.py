@@ -77,6 +77,8 @@ class compression:
                         	nac=len(nameas)
                         	
                         	C=4
+                        	
+                           
                     
                     
                    
@@ -316,6 +318,7 @@ class compression:
                                     ei=0
 
                                     Spin=0
+                                    T50 = int(sda3, 2)  
                                     
                                    
                                    
@@ -323,9 +326,11 @@ class compression:
                                   
                                     ei=0
                                     T14=0
+                                    T21=0
                                     if E==0:
                                     
 	                                    T40 = int(sda3, 2)
+	                                    
 	                                    
 	                                    
 	                                    sda32=sda2[ei:ei+8]
@@ -844,6 +849,7 @@ class compression:
 		                                    	ccc=2
 		                                    	if T40<=0:
 		                                    		  ccc=4
+		                                    		 
 		                                    		  
 		                                    		  
 	                                    		
@@ -1183,6 +1189,7 @@ class compression:
                                     B3=""
                                     if ccc==4:
                                     		nameas=name+".b4" 
+                                    		
                                     	
                                    
 
@@ -1193,8 +1200,11 @@ class compression:
                                     if ccc==2:
                                     		sda17=bin(T30)[2:]
                                     	
-                                    if ccc==4 or ccc==3:
+                                    if ccc==3:
                                         	sda17=bin(T40)[2:]
+                                    if ccc==4:
+                                        	sda17=bin(T50)[2:]	
+                                        	
                                     lenf=len(sda17)
                                     szx=""
                                     xc=8-lenf%8
@@ -1279,11 +1289,23 @@ class compression:
 
                                     ei=0
                                     Spin=0
+                                    T7=0
+                                    T10=0
+                                    T9=0
+                                    T12=0
+                                    T22=0
                                   
                                     T3=1
                                     T4=0
                                     T5=0
                                     cc=0
+                                    
+                                    if C==4:
+                                    	T60= int(sda3, 2)
+                                    	
+                                    if C==3:
+                                    	T7= int(sda3, 2)
+                                    	T7=T7+10000
                                     if C==2:
                                                 	                                    				   	
                                                                       	                                    				   
@@ -1447,7 +1469,7 @@ class compression:
  
                                     if C==1:
 	                                    
-	                                    T1= int(sda10, 2)
+	                                    T1= int(sda3, 2)
 	                                   
 	                                    T10=T1
 	                                    T12=0
@@ -1533,9 +1555,7 @@ class compression:
                      
 	              
                                     
-                                    if C==3:
-                                    	T7= int(sda10, 2)
-                                    	T7=T7+10000
+                               
                                     
                                     sda6=sda4
                                     sda4=""
@@ -1569,10 +1589,25 @@ class compression:
                                         
                                         
                                         if  Circle_times2==1:
-                                        	 
+                                        	
                                           
                                           
-                                            	
+                                         
+                                            if C==4:
+                                            	sda17=bin(T60)[2:]
+                                            	lenf=len(sda17)
+                                            	szx=""
+                                            	xc=8-lenf%8
+                                            	z=0
+                                            	if xc!=0:
+                                            	        if xc!=8:
+                                            	            while z<xc:
+                                            	            	szx="0"+szx
+                                            	            	z=z+1
+                                            	sda17=szx+sda17
+                                    
+                                            
+                                          	    	
                                             if C==2 or C==3:
                                             		 
                                             			sda17=bin(T7)[2:]
