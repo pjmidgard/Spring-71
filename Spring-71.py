@@ -62,6 +62,7 @@ class compression:
                         	nac=len(nameas)
                         	
                         	C=2
+                        
                         	
                         	
                         if nameas[nac-3:nac]==".b3":
@@ -217,6 +218,7 @@ class compression:
                                         
                                     if lenf7<=2 and lenf7>=0:
                                       E=1
+                                      
                                       
                                 #########################################################################################################################################################
                                 
@@ -1281,104 +1283,19 @@ class compression:
                                     T3=1
                                     T4=0
                                     T5=0
-                                    
-                                    
-                                  
-
-                                    
-                                    sda10=sda3
-                                    
-                                    if C==1:
-	                                    
-	                                    T1= int(sda10, 2)
-	                                   
-	                                    T10=T1
-	                                    T12=0
-	                                    while T5!=1:
-		                                    T2=T1%2
-		                                    T3=T1
-		                                    
-		                                    if T2==0:
-		                                        T3=T3//2
-		                                        T1=T3
-		                                        T4=T4+1
-		                                        
-		                                       
-		                                    
-		                                    	
-		                                    else:
-		                                    	T3=(T3*3)+1
-		                                    	T1=T3
-		                                    	T4=T4+1
-		                                    	
-		                                    	
-		                                    	
-		                                    
-		                                    	
-		                                    if T3==1 and T4>=2:
-		                                    	T4=T4
-		                                    	T5=T3
-		                                    	
-		                                    	
-		                                    
-		                                  
-		                               
-	                                    T7=1
-	                                    T1=1
-	                                    T8=0
-	                                    T6=T4
-	                                    T9=T4
-	                                    
-	                                    T3=1
-	                                    T4=0
-	                                    T5=0
-	                                    
-	                                    while T7!=T10:
-		                                    T2=T1%2
-		                                    T3=T1
-		                                    
-		                                    if T2==0:
-		                                        T3=T3//2
-		                                        T1=T3
-		                                        T4=T4+1
-		                                        
-		                                       
-		                                    
-		                                    	
-		                                    else:
-		                                    	T3=(T3*3)+1
-		                                    	T1=T3
-		                                    	T4=T4+1
-	
-		                                    	
-		                                    if T3==1 and T4>=2:
-		                                    	T4=T4
-		                                    	T8=T4
-		                                    	T5=T3
-		                                    	T7=T7+1
-		                                    	T1=T7
-		                                    	T4=0	
-		                                    if T6==T8:
-		                                    	T12=T12+1
-		                                    	T21=T7
-		                                 
-	
-	                                    
-	                                
-	                                    
-	                                     
-	                                    T22=T7-T21
-	                                    cc=0
-	                                    if T22>255:
-	                                           cc=1
-	                                           
+                                    cc=0
                                     if C==2:
-                                    	                                    
+                                                	                                    				   	
+                                                                      	                                    				   
+                                                                      	                                    
 	                                    T3=1
 	                                    T4=0
 	                                    T5=0
 	                                    
+	                                    
+		                                    
 	                                    sda10=sda3
+	                                   
 	                                    
 	                                    T1= int(sda10, 2)
 	                                   
@@ -1525,6 +1442,95 @@ class compression:
 	                                    T7=T7
 	                                    T7=T7    
 	                                    
+                                    
+                                    
+ 
+                                    if C==1:
+	                                    
+	                                    T1= int(sda10, 2)
+	                                   
+	                                    T10=T1
+	                                    T12=0
+	                                    while T5!=1:
+		                                    T2=T1%2
+		                                    T3=T1
+		                                    
+		                                    if T2==0:
+		                                        T3=T3//2
+		                                        T1=T3
+		                                        T4=T4+1
+		                                        
+		                                       
+		                                    
+		                                    	
+		                                    else:
+		                                    	T3=(T3*3)+1
+		                                    	T1=T3
+		                                    	T4=T4+1
+		                                    	
+		                                    	
+		                                    	
+		                                    
+		                                    	
+		                                    if T3==1 and T4>=2:
+		                                    	T4=T4
+		                                    	T5=T3
+		                                    	
+		                                    	
+		                                    
+		                                  
+		                               
+	                                    T7=1
+	                                    T1=1
+	                                    T8=0
+	                                    T6=T4
+	                                    T9=T4
+	                                    
+	                                    T3=1
+	                                    T4=0
+	                                    T5=0
+	                                    
+	                                    while T7!=T10:
+		                                    T2=T1%2
+		                                    T3=T1
+		                                    
+		                                    if T2==0:
+		                                        T3=T3//2
+		                                        T1=T3
+		                                        T4=T4+1
+		                                        
+		                                       
+		                                    
+		                                    	
+		                                    else:
+		                                    	T3=(T3*3)+1
+		                                    	T1=T3
+		                                    	T4=T4+1
+	
+		                                    	
+		                                    if T3==1 and T4>=2:
+		                                    	T4=T4
+		                                    	T8=T4
+		                                    	T5=T3
+		                                    	T7=T7+1
+		                                    	T1=T7
+		                                    	T4=0	
+		                                    if T6==T8:
+		                                    	T12=T12+1
+		                                    	T21=T7
+		                                 
+	
+	                                    
+	                                
+	                                    
+	                                     
+	                                    T22=T7-T21
+	                                    cc=0
+	                                    if T22>255:
+	                                           cc=1
+									
+
+                     
 	              
                                     
                                     if C==3:
@@ -1563,9 +1569,31 @@ class compression:
                                         
                                         
                                         if  Circle_times2==1:
-                                            #print(lenf6-1)
-                                            if T7!=T10:
-                                            	raise SystemExit
+                                        	 
+                                          
+                                          
+                                            	
+                                            if C==2 or C==3:
+                                            		 
+                                            			sda17=bin(T7)[2:]
+                                            			lenf=len(sda17)
+                                            			szx=""
+                                            			xc=8-lenf%8
+                                            			z=0
+                                            			if xc!=0:
+                                            			             if xc!=8:
+                                            			             	while z<xc:
+                                            			             		szx="0"+szx
+                                            			             		z=z+1
+                                            			             					
+                                            			sda17=szx+sda17
+                                            																
+                                            		
+				
+				                                   
+				
+                                                                                      
+                                            	
 
                                             if T7==T10:
                                             	sda33=bin(T9)[2:]
@@ -1610,22 +1638,7 @@ class compression:
                                             	            	szx5="0"+szx5
                                             	            	z=z+1
                                             	sda32=szx5+sda33
-                                            	if C==2 or C==3:
-                                            		sda17=bin(T7)[2:]
-                                            		lenf=len(sda17)
-                                            		szx=""
-                                            		xc=8-lenf%8
-                                            		z=0
-                                            		if xc!=0:
-                                            		      if xc!=8:
-                                            		              while z<xc:
-                                            		              	szx="0"+szx
-                                            		              	z=z+1
-				
-				                                   
-				
-                                                                                      
-                                            		sda17=szx+sda17
+                  
                                             	if C==1:
                                                 
                                             		sda17=sda31+sda19+sda32
