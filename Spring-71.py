@@ -209,13 +209,15 @@ class compression:
 
                                     lenf3=len(sda2)
                                 lenf2=len(sda2)
+                                E=0
                                 #print(lenf2)
                                 if i==1:
                                     if lenf7>=(2**40)-1:
                                         raise SystemExit
                                         
-                                    if lenf7<=2:
-                                        raise SystemExit 
+                                    if lenf7<=2 and lenf7>=0:
+                                      E=1
+                                      
                                 #########################################################################################################################################################
                                 
                                 block2=0
@@ -319,237 +321,121 @@ class compression:
                                   
                                     ei=0
                                     T14=0
+                                    if E==0:
                                     
-                                    T40 = int(sda3, 2)
-                                    
-                                    
-                                    sda32=sda2[ei:ei+8]
-                                    T22 = int(sda32, 2)
-                                    Ssize=len(sda32)
-                                   
-                                    if Ssize==0:
-                                    	raise SystemExit
-
-                                    
-                                    
-                                    	
-                                    	
-                                    T16=sda2[8:Times+8]
-                               
-                                    
-                                    	
-                                    T16="1"+T16
-                                    
-                                    Ssize=len(T16)
-                                   
-                                    if Ssize==0:
-                                    		raise SystemExit
-                   
-                                    
-                                    T12 = int(T16, 2)
-                                    sda2=sda2[Times+8:]
-                                    
-                                    sda10=sda2
-                                    Ssize=len(sda10)
-                                   
-                                    if Ssize==0:
-                                                     
-                                         sda17="01111111"+sda3
-                                         #print(sda17)
-                                       
-                                         n = int(sda17, 2)
-                                         qqwslenf=len(sda17)
-                                         qqwslenf=(qqwslenf//8)*2
-                                         qqwslenf=str(qqwslenf)
-                                         qqwslenf="%0"+qqwslenf+"x"
-                                         jl=binascii.unhexlify(qqwslenf % n)
-                                         sssssw=len(jl)
-
-                                         szxzzza=""
-                                         szxzs=""
-                                            
-                                         f2.write(jl)
-                                         x2 = time()
-                                         x3=x2-x
-                                         return print(x3)
-                                   
-                                   
-                                    T6 = int(sda10, 2)
-                                    if T6==0:
-                                        	raise SystemExit
-                                           
-                                    
-                                    T7=1
-                                    T1=1
-                                    T8=0
-                                  
-                                    
-                                    
-                                    T3=1
-                                    T4=0
-                                    T5=0
-                                    
-                                    T15=0
-                                    
-                                    while T15!=T12:
-	                                    T2=T1%2
-	                                    T3=T1
-	                                    
-	                                    if T2==0:
-	                                        T3=T3//2
-	                                        T1=T3
-	                                        T4=T4+1
-	                                        
-	                                       
-	                                    
-	                                    	
-	                                    else:
-	                                    	T3=(T3*3)+1
-	                                    	T1=T3
-	                                    	T4=T4+1
-
-	                                    	
-	                                    if T3==1 and T4>=2:
-	                                    	T4=T4
-	                                    	T8=T4
-	                                    	T5=T3
-	                                    	T7=T7+1
-	                                    	T1=T7
-	                                    	T4=0	
-	                                    if T6==T8:
-	                                    	T15=T15+1
-	                                    
-	                                	
-                                    
-                                    T23=T22+T7
-                                    
-                                    T27=T23
-                                    
-                                    T3=1
-                                    T4=0
-                                    T5=0
-                                    
-                                    
-                                    T1=T23
-                                    
-                                    T10=T1
-                                    T12=0
-                                    while T5!=1:
-	                                    T2=T1%2
-	                                    T3=T1
-	                                    
-	                                    if T2==0:
-	                                        T3=T3//2
-	                                        T1=T3
-	                                        T4=T4+1
-	                                        
-	                                       
-	                                    
-	                                    	
-	                                    else:
-	                                    	T3=(T3*3)+1
-	                                    	T1=T3
-	                                    	T4=T4+1
-	                                    	
-	                                    	
-	                                    	
-	                                    
-	                                    	
-	                                    if T3==1 and T4>=2:
-	                                    	T4=T4
-	                                    	T5=T3
-                                    
-                                    
-                  
-	                                    	
-	                                              
-                                    T7=1
-                                    T1=1
-                                    T8=0
-                                    T11=T6
-                                    T6=T4
-                                    
-                                    T9=T4
-                                    
-                                    T3=1
-                                    T4=0
-                                    T5=0
-                                    
-                                    while T7!=T10:
-	                                    T2=T1%2
-	                                    T3=T1
-	                                    
-	                                    if T2==0:
-	                                        T3=T3//2
-	                                        T1=T3
-	                                        T4=T4+1
-	                                        
-	                                       
-	                                    
-	                                    	
-	                                    else:
-	                                    	T3=(T3*3)+1
-	                                    	T1=T3
-	                                    	T4=T4+1
-
-	                                    	
-	                                    if T3==1 and T4>=2:
-	                                    	T4=T4
-	                                    	T8=T4
-	                                    	T5=T3
-	                                    	T7=T7+1
-	                                    	T1=T7
-	                                    	T4=0	
-	                                    if T6==T8:
-	                                    	T12=T12+1
-	                                    	T21=T7
-	                                 
-
-                                    
-                                
-                                    
-                                     
-                                    T24=T7-T21
-                                    T33=T24-T22
-                                    
-                                    ccc=0
-                                    cc=0
-                                   
-                                    
-                                    
-                                   
-                                    
-                                    
-                                    if T12==T15 and T33==0 and T6==T11:
-                                    	sda17=bin(T27)[2:] 
-                                    	nameas=name+".b1"
-                                    	ccc=1
-                                    else:
-                                    
-                                    	
-                                   
-                                   
-                                   
-                                  
-	                                    T3=1
-	                                    T4=0
-	                                    T5=0
-	                                    ccc=2
-	                                    
-	                                    nameas=name+".b2"
-	                                    	
+	                                    T40 = int(sda3, 2)
 	                                    
 	                                    
-	                                  
-	
-	                                    if sda3[0:8]=="00000000":
+	                                    sda32=sda2[ei:ei+8]
+	                                    T22 = int(sda32, 2)
+	                                    Ssize=len(sda32)
+	                                   
+	                                    if Ssize==0:
 	                                    	raise SystemExit
-	                                    sda10=sda3
+	
 	                                    
-	                                    T1= int(sda10, 2)
+	                                    
+	                                    	
+	                                    	
+	                                    T16=sda2[8:Times+8]
+	                               
+	                                    
+	                                    	
+	                                    T16="1"+T16
+	                                    
+	                                    Ssize=len(T16)
 	                                   
+	                                    if Ssize==0:
+	                                    		raise SystemExit
+	                   
+	                                    
+	                                    T12 = int(T16, 2)
+	                                    sda2=sda2[Times+8:]
+	                                    
+	                                    sda10=sda2
+	                                    Ssize=len(sda10)
+	                                   
+	                                    if Ssize==0:
+	                                                     
+	                                         sda17="01111111"+sda3
+	                                         #print(sda17)
+	                                       
+	                                         n = int(sda17, 2)
+	                                         qqwslenf=len(sda17)
+	                                         qqwslenf=(qqwslenf//8)*2
+	                                         qqwslenf=str(qqwslenf)
+	                                         qqwslenf="%0"+qqwslenf+"x"
+	                                         jl=binascii.unhexlify(qqwslenf % n)
+	                                         sssssw=len(jl)
+	
+	                                         szxzzza=""
+	                                         szxzs=""
+	                                            
+	                                         f2.write(jl)
+	                                         x2 = time()
+	                                         x3=x2-x
+	                                         return print(x3)
+	                                   
+	                                   
+	                                    T6 = int(sda10, 2)
+	                                    if T6==0:
+	                                        	raise SystemExit
+	                                           
+	                                    
+	                                    T7=1
+	                                    T1=1
+	                                    T8=0
+	                                  
+	                                    
+	                                    
+	                                    T3=1
+	                                    T4=0
+	                                    T5=0
+	                                    
+	                                    T15=0
+	                                    
+	                                    while T15!=T12:
+		                                    T2=T1%2
+		                                    T3=T1
+		                                    
+		                                    if T2==0:
+		                                        T3=T3//2
+		                                        T1=T3
+		                                        T4=T4+1
+		                                        
+		                                       
+		                                    
+		                                    	
+		                                    else:
+		                                    	T3=(T3*3)+1
+		                                    	T1=T3
+		                                    	T4=T4+1
+	
+		                                    	
+		                                    if T3==1 and T4>=2:
+		                                    	T4=T4
+		                                    	T8=T4
+		                                    	T5=T3
+		                                    	T7=T7+1
+		                                    	T1=T7
+		                                    	T4=0	
+		                                    if T6==T8:
+		                                    	T15=T15+1
+		                                    
+		                                	
+	                                    
+	                                    T23=T22+T7
+	                                    
+	                                    T27=T23
+	                                    
+	                                    T3=1
+	                                    T4=0
+	                                    T5=0
+	                                    
+	                                    
+	                                    T1=T23
+	                                    
 	                                    T10=T1
-	                                    T40=T1
 	                                    T12=0
 	                                    while T5!=1:
 		                                    T2=T1%2
@@ -575,15 +461,17 @@ class compression:
 		                                    if T3==1 and T4>=2:
 		                                    	T4=T4
 		                                    	T5=T3
+	                                    
+	                                    
+	                  
 		                                    	
-		                                    	
-		                                    
-		                                  
-		                               
+		                                              
 	                                    T7=1
 	                                    T1=1
 	                                    T8=0
+	                                    T11=T6
 	                                    T6=T4
+	                                    
 	                                    T9=T4
 	                                    
 	                                    T3=1
@@ -624,225 +512,349 @@ class compression:
 	                                
 	                                    
 	                                     
-	                                    T22=T7-T21
-	                                    T24=T22
-	                                   
-	                                   
-	                                    T7=1
-	                                    T1=1
-	                                    T8=0
-	                                    T6=T6-1
+	                                    T24=T7-T21
+	                                    T33=T24-T22
 	                                    
-	                                    if T6<=0:
-	                                    	   ccc=4 
+	                                    ccc=0
+	                                    cc=0
+	                                   
+	                                    
+	                                    
+	                                   
+	                                    
+	                                    
+	                                    if T12==T15 and T33==0 and T6==T11:
+	                                    	sda17=bin(T27)[2:] 
+	                                    	nameas=name+".b1"
+	                                    	ccc=1
+	                                    else:
+	                                    
 	                                    	
-	                                    
-	                                    T9=T4
-	                                    
-	                                    T3=1
-	                                    T4=0
-	                                    T5=0
-	                                    T14=T12
-	                                    
-	                                    T12=0
 	                                   
-	                                    
-	                                    
-	                                    while T12!=T14:
-		                                    T2=T1%2
-		                                    T3=T1
-		                                    
-		                                    if T2==0:
-		                                        T3=T3//2
-		                                        T1=T3
-		                                        T4=T4+1
-		                                        
-		                                       
-		                                    
-		                                    	
-		                                    else:
-		                                    	T3=(T3*3)+1
-		                                    	T1=T3
-		                                    	T4=T4+1
-	
-		                                    	
-		                                    if T3==1 and T4>=2:
-		                                    	T4=T4
-		                                    	T8=T4
-		                                    	T5=T3
-		                                    	T7=T7+1
-		                                    	
-		                                   
-		                                    	T1=T7
-		                                    	T4=0	
-		                                    if T6==T8:
-		                                    	T12=T12+1
-		                                    	T21=T7
-		                                 
-	
-	                                    
-	                                
-	                                    
-	                                     
-	                                    T7=T7
-	                                    T7=T7+1
-	                                    T30=T7
-	                                    
-	                                    T3=1
-	                                    T4=0
-	                                    T5=0
-	                                    
-	                                    
-	                                    
-	                                    T1=T7
 	                                   
-	                                    T10=T1
-	                                    T12=0
-	                                    while T5!=1:
-		                                    T2=T1%2
-		                                    T3=T1
+	                                   
+	                                  
+		                                    T3=1
+		                                    T4=0
+		                                    T5=0
+		                                    ccc=2
 		                                    
-		                                    if T2==0:
-		                                        T3=T3//2
-		                                        T1=T3
-		                                        T4=T4+1
-		                                        
-		                                       
-		                                    
-		                                    	
-		                                    else:
-		                                    	T3=(T3*3)+1
-		                                    	T1=T3
-		                                    	T4=T4+1
-		                                    	
-		                                    	
+		                                    nameas=name+".b2"
 		                                    	
 		                                    
-		                                    	
-		                                    if T3==1 and T4>=2:
-		                                    	T4=T4
-		                                    	T5=T3
-		                                    	
-		                                    	
 		                                    
 		                                  
-		                               
-	                                    T7=1
-	                                    T1=1
-	                                    T8=0
-	                                    T6=T4
-	                                    T9=T4
-	                                    
-	                                    T3=1
-	                                    T4=0
-	                                    T5=0
-	                                    
-	                                    while T7!=T10:
-		                                    T2=T1%2
-		                                    T3=T1
+		
+		                                    if sda3[0:8]=="00000000":
+		                                    	raise SystemExit
+		                                    sda10=sda3
 		                                    
-		                                    if T2==0:
-		                                        T3=T3//2
-		                                        T1=T3
-		                                        T4=T4+1
-		                                        
-		                                       
-		                                    
-		                                    	
-		                                    else:
-		                                    	T3=(T3*3)+1
-		                                    	T1=T3
-		                                    	T4=T4+1
-	
-		                                    	
-		                                    if T3==1 and T4>=2:
-		                                    	T4=T4
-		                                    	T8=T4
-		                                    	T5=T3
-		                                    	T7=T7+1
-		                                    	T1=T7
-		                                    	T4=0	
-		                                    if T6==T8:
-		                                    	T12=T12+1
-		                                    	T21=T7
-		                                 
-	
-	                                    
-	                                
-	                                    
-	                                     
-	                                    T22=T7-T21
-	                                    T24=T22
-	                                   
-	                                   
-	                                    T7=1
-	                                    T1=1
-	                                    T8=0
-	                                    T6=T6+1
-	                                    
-	                                    if T6<=0:
-	                                    	   ccc=4 
-	                                    	
-	                                    
-	                                    T9=T4
-	                                    
-	                                    T3=1
-	                                    T4=0
-	                                    T5=0
-	                                    T14=T12
-	                                    
-	                                    T12=0
-	                                   
-	                                    
-	                                    
-	                                    while T12!=T14:
-		                                    T2=T1%2
-		                                    T3=T1
-		                                    
-		                                    if T2==0:
-		                                        T3=T3//2
-		                                        T1=T3
-		                                        T4=T4+1
-		                                        
-		                                       
-		                                    
-		                                    	
-		                                    else:
-		                                    	T3=(T3*3)+1
-		                                    	T1=T3
-		                                    	T4=T4+1
-	
-		                                    	
-		                                    if T3==1 and T4>=2:
-		                                    	T4=T4
-		                                    	T8=T4
-		                                    	T5=T3
-		                                    	T7=T7+1
-		                                    	
+		                                    T1= int(sda10, 2)
 		                                   
-		                                    	T1=T7
-		                                    	T4=0	
-		                                    if T6==T8:
-		                                    	T12=T12+1
-		                                    	T21=T7
-		                                 
-	
-	                                    
-	                                
-	                                    
-	                                     
-	                                    T7=T7
-	                                    T7=T7
-	                                    
-	                                    if T40!=T7:
-	                                    	nameas=name+".b3" 
-	                                    	T40=T40-10000
-	                                    	if T40<=0:
-	                                    		  
-	                                    		  ccc=4
+		                                    T10=T1
+		                                    T40=T1
+		                                    T12=0
+		                                    while T5!=1:
+			                                    T2=T1%2
+			                                    T3=T1
+			                                    
+			                                    if T2==0:
+			                                        T3=T3//2
+			                                        T1=T3
+			                                        T4=T4+1
+			                                        
+			                                       
+			                                    
+			                                    	
+			                                    else:
+			                                    	T3=(T3*3)+1
+			                                    	T1=T3
+			                                    	T4=T4+1
+			                                    	
+			                                    	
+			                                    	
+			                                    
+			                                    	
+			                                    if T3==1 and T4>=2:
+			                                    	T4=T4
+			                                    	T5=T3
+			                                    	
+			                                    	
+			                                    
+			                                  
+			                               
+		                                    T7=1
+		                                    T1=1
+		                                    T8=0
+		                                    T6=T4
+		                                    T9=T4
+		                                    
+		                                    T3=1
+		                                    T4=0
+		                                    T5=0
+		                                    
+		                                    while T7!=T10:
+			                                    T2=T1%2
+			                                    T3=T1
+			                                    
+			                                    if T2==0:
+			                                        T3=T3//2
+			                                        T1=T3
+			                                        T4=T4+1
+			                                        
+			                                       
+			                                    
+			                                    	
+			                                    else:
+			                                    	T3=(T3*3)+1
+			                                    	T1=T3
+			                                    	T4=T4+1
+		
+			                                    	
+			                                    if T3==1 and T4>=2:
+			                                    	T4=T4
+			                                    	T8=T4
+			                                    	T5=T3
+			                                    	T7=T7+1
+			                                    	T1=T7
+			                                    	T4=0	
+			                                    if T6==T8:
+			                                    	T12=T12+1
+			                                    	T21=T7
+			                                 
+		
+		                                    
+		                                
+		                                    
+		                                     
+		                                    T22=T7-T21
+		                                    T24=T22
+		                                   
+		                                   
+		                                    T7=1
+		                                    T1=1
+		                                    T8=0
+		                                    T6=T6-1
+		                                    
+		                                    if T6<=0:
+		                                    	   ccc=4 
+		                                    	
+		                                    
+		                                    T9=T4
+		                                    
+		                                    T3=1
+		                                    T4=0
+		                                    T5=0
+		                                    T14=T12
+		                                    
+		                                    T12=0
+		                                   
+		                                    
+		                                    
+		                                    while T12!=T14:
+			                                    T2=T1%2
+			                                    T3=T1
+			                                    
+			                                    if T2==0:
+			                                        T3=T3//2
+			                                        T1=T3
+			                                        T4=T4+1
+			                                        
+			                                       
+			                                    
+			                                    	
+			                                    else:
+			                                    	T3=(T3*3)+1
+			                                    	T1=T3
+			                                    	T4=T4+1
+		
+			                                    	
+			                                    if T3==1 and T4>=2:
+			                                    	T4=T4
+			                                    	T8=T4
+			                                    	T5=T3
+			                                    	T7=T7+1
+			                                    	
+			                                   
+			                                    	T1=T7
+			                                    	T4=0	
+			                                    if T6==T8:
+			                                    	T12=T12+1
+			                                    	T21=T7
+			                                 
+		
+		                                    
+		                                
+		                                    
+		                                     
+		                                    T7=T7
+		                                    T7=T7+1
+		                                    T30=T7
+		                                    
+		                                    T3=1
+		                                    T4=0
+		                                    T5=0
+		                                    
+		                                    
+		                                    
+		                                    T1=T7
+		                                   
+		                                    T10=T1
+		                                    T12=0
+		                                    while T5!=1:
+			                                    T2=T1%2
+			                                    T3=T1
+			                                    
+			                                    if T2==0:
+			                                        T3=T3//2
+			                                        T1=T3
+			                                        T4=T4+1
+			                                        
+			                                       
+			                                    
+			                                    	
+			                                    else:
+			                                    	T3=(T3*3)+1
+			                                    	T1=T3
+			                                    	T4=T4+1
+			                                    	
+			                                    	
+			                                    	
+			                                    
+			                                    	
+			                                    if T3==1 and T4>=2:
+			                                    	T4=T4
+			                                    	T5=T3
+			                                    	
+			                                    	
+			                                    
+			                                  
+			                               
+		                                    T7=1
+		                                    T1=1
+		                                    T8=0
+		                                    T6=T4
+		                                    T9=T4
+		                                    
+		                                    T3=1
+		                                    T4=0
+		                                    T5=0
+		                                    
+		                                    while T7!=T10:
+			                                    T2=T1%2
+			                                    T3=T1
+			                                    
+			                                    if T2==0:
+			                                        T3=T3//2
+			                                        T1=T3
+			                                        T4=T4+1
+			                                        
+			                                       
+			                                    
+			                                    	
+			                                    else:
+			                                    	T3=(T3*3)+1
+			                                    	T1=T3
+			                                    	T4=T4+1
+		
+			                                    	
+			                                    if T3==1 and T4>=2:
+			                                    	T4=T4
+			                                    	T8=T4
+			                                    	T5=T3
+			                                    	T7=T7+1
+			                                    	T1=T7
+			                                    	T4=0	
+			                                    if T6==T8:
+			                                    	T12=T12+1
+			                                    	T21=T7
+			                                 
+		
+		                                    
+		                                
+		                                    
+		                                     
+		                                    T22=T7-T21
+		                                    T24=T22
+		                                   
+		                                   
+		                                    T7=1
+		                                    T1=1
+		                                    T8=0
+		                                    T6=T6+1
+		                                    
+		                                    if T6<=0:
+		                                    	   ccc=4 
+		                                    	
+		                                    
+		                                    T9=T4
+		                                    
+		                                    T3=1
+		                                    T4=0
+		                                    T5=0
+		                                    T14=T12
+		                                    
+		                                    T12=0
+		                                   
+		                                    
+		                                    
+		                                    while T12!=T14:
+			                                    T2=T1%2
+			                                    T3=T1
+			                                    
+			                                    if T2==0:
+			                                        T3=T3//2
+			                                        T1=T3
+			                                        T4=T4+1
+			                                        
+			                                       
+			                                    
+			                                    	
+			                                    else:
+			                                    	T3=(T3*3)+1
+			                                    	T1=T3
+			                                    	T4=T4+1
+		
+			                                    	
+			                                    if T3==1 and T4>=2:
+			                                    	T4=T4
+			                                    	T8=T4
+			                                    	T5=T3
+			                                    	T7=T7+1
+			                                    	
+			                                   
+			                                    	T1=T7
+			                                    	T4=0	
+			                                    if T6==T8:
+			                                    	T12=T12+1
+			                                    	T21=T7
+			                                 
+		
+		                                    
+		                                
+		                                    
+		                                     
+		                                    T7=T7
+		                                    T7=T7
+		                                    
+		                                    ccc=2
+		                                    
+		                                    if T40!=T7:
+		                                    	nameas=name+".b3" 
+		                                    	T40=T40-10000
+		                                    	ccc=2
+		                                    	if T40<=0:
+		                                    		  ccc=4
+		                                    		  
+		                                    		  
 	                                    		
-	                                    	ccc=2
-                                    	
+	                                    	
+	                                
+                                    if E==1:
+                                    		T40 = int(sda3, 2)
+                                    		ccc=4
+                                    		
+                                    		
 
                                     lenf=len(sda17)
                                     
