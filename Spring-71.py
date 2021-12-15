@@ -1153,11 +1153,12 @@ class compression:
 		                                    T7=T7
 		                                    
 		                                    ccc=2
+		                                   
 		                                    
 		                                    if T40!=T7:
 		                                    	nameas=name+".b3" 
 		                                    	T40=T40-10000
-		                                    	ccc=2
+		                                    	ccc=3
 		                                    	if T40<=0:
 		                                    		  ccc=4
 		                                    		  
@@ -1187,17 +1188,20 @@ class compression:
 
                                     if ccc==1:
                                     	sda17=szx+sda17
-                                    if ccc==2 or ccc==4:
-                                        sda17=bin(T40)[2:]
-                                        lenf=len(sda17)
-                                        szx=""
-                                        xc=8-lenf%8
-                                        z=0
-                                        if xc!=0:
-	                                        if xc!=8:
-	                                                while z<xc:
-	                                                        szx="0"+szx
-	                                                        z=z+1
+                                    if ccc==2:
+                                    		sda17=bin(T30)[2:]
+                                    	
+                                    if ccc==4 or ccc==3:
+                                        	sda17=bin(T40)[2:]
+                                    lenf=len(sda17)
+                                    szx=""
+                                    xc=8-lenf%8
+                                    z=0
+                                    if xc!=0:
+                                                 if xc!=8:
+                                                         while z<xc:
+                                                         	szx="0"+szx
+                                                         	z=z+1
 	
 	                                    
 	                                    
