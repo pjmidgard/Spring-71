@@ -45,6 +45,8 @@ class compression:
         
                     nameas=name
                     nac=len(nameas)
+                    
+                    ccc=0
 
                     if i==2:
                         if nameas[nac-3:nac]==".b1":
@@ -68,6 +70,13 @@ class compression:
                         	nac=len(nameas)
                         	
                         	C=3
+                        if nameas[nac-3:nac]==".b4":
+                   
+                        	nameas=name[:nac-3]
+                        	nac=len(nameas)
+                        	
+                        	C=4
+                    
                     
                    
                         
@@ -302,6 +311,8 @@ class compression:
                                   
                                     ei=0
                                     T14=0
+                                    
+                                    T40 = int(sda3, 2)
                                     
                                     
                                     sda32=sda2[ei:ei+8]
@@ -614,7 +625,7 @@ class compression:
 	                                    T6=T6-1
 	                                    
 	                                    if T6<=0:
-	                                    	   raise SystemExit 
+	                                    	   ccc=4 
 	                                    	
 	                                    
 	                                    T9=T4
@@ -761,7 +772,7 @@ class compression:
 	                                    T6=T6+1
 	                                    
 	                                    if T6<=0:
-	                                    	   raise SystemExit 
+	                                    	   ccc=4 
 	                                    	
 	                                    
 	                                    T9=T4
@@ -817,6 +828,9 @@ class compression:
 	                                    if T40!=T7:
 	                                    	nameas=name+".b3" 
 	                                    	T40=T40-10000
+	                                    	if T40<=0:
+	                                    		  ccc=4
+	                                    		
 	                                    	ccc=2
                                     	
 
@@ -840,7 +854,7 @@ class compression:
 
                                     if ccc==1:
                                     	sda17=szx+sda17
-                                    if ccc==2:
+                                    if ccc==2 or ccc==4:
                                         sda17=bin(T40)[2:]
                                         lenf=len(sda17)
                                         szx=""
@@ -1256,7 +1270,7 @@ class compression:
                                             	            	szx5="0"+szx5
                                             	            	z=z+1
                                             	sda32=szx5+sda33
-                                            	if C==2 or C=:
+                                            	if C==2 or C==3:
                                             		sda17=bin(T7)[2:]
                                             		lenf=len(sda17)
                                             		szx=""
