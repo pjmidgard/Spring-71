@@ -829,6 +829,7 @@ class compression:
 	                                    	nameas=name+".b3" 
 	                                    	T40=T40-10000
 	                                    	if T40<=0:
+	                                    		  
 	                                    		  ccc=4
 	                                    		
 	                                    	ccc=2
@@ -848,6 +849,9 @@ class compression:
 
                                     lenf=len(sda17)
                                     B3=""
+                                    if ccc==4:
+                                    		nameas=name+".b4" 
+                                    	
                                    
 
                                                                                       
@@ -1127,7 +1131,7 @@ class compression:
 	                                    T6=T6+1
 	                                    
 	                                    if T6<=0:
-	                                    	   raise SystemExit 
+	                                    	   ccc=4 
 	                                    	
 	                                    
 	                                    T9=T4
